@@ -1,0 +1,66 @@
+---
+import Section from "./Section.astro";
+import type { SkillCategory } from "@types";
+
+interface Props {
+  skills: SkillCategory[];
+}
+
+const { skills } = Astro.props;
+
+const icons: Record<string, string> = {
+  python:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  javascript:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  html5:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  css3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  mysql:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  github:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  swagger:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg",
+  database:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
+};
+
+const getIcon = (icon: string) => icons[icon];
+---
+
+<Section text="Tech Stack" href="skills">
+  <div class="space-y-10">
+    {
+      skills.map((category) => (
+        <div>
+          <h3 class="mb-5 font-serif text-2xl font-semibold text-black">
+            {category.category}
+          </h3>
+
+          <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+            {category.skills.map((skill) => (
+              <div class="group flex items-center gap-3 rounded-xl border border-primary/15 bg-[#f8f5fc] px-4 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white hover:shadow-md">
+                {getIcon(skill.icon) ? (
+                  <img
+                    src={getIcon(skill.icon)}
+                    alt={`${skill.name} logo`}
+                    class="h-9 w-9 object-contain"
+                  />
+                ) : (
+                  <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-xs font-bold text-primary shadow-sm">
+                    {skill.name.substring(0, 2).toUpperCase()}
+                  </div>
+                )}
+
+                <span class="text-sm font-medium text-black">{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Section>

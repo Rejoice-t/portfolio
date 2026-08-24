@@ -1,27 +1,158 @@
 ---
 import type { HeroProps } from "@types";
+
 type Props = HeroProps;
 
 const { name, specialty, summary, email } = Astro.props;
 ---
 
-<section class="py-24 md:py-32" id="#hero">
+<section class="pt-12 pb-20 md:pt-16 md:pb-24" id="hero">
+  <p class="mb-4 text-sm font-medium tracking-wider text-primary uppercase">
+    Hello, I'm
+  </p>
+
+  <!-- NAME -->
   <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
+    class="mb-2 font-serif text-7xl font-bold tracking-tightest text-black sm:text-8xl md:text-9xl"
   >
-    {name}
+    <span id="typed-name"></span>
+    <span id="name-cursor" aria-hidden="true">|</span>
   </h1>
+
+  <!-- SPECIALTY -->
   <p
     class="mb-9 font-serif text-4xl leading-11.5 font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
   >
-    {specialty}
+    <span id="typed-specialty"></span>
+    <span id="specialty-cursor" aria-hidden="true">|</span>
   </p>
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg">
+
+  <!-- SUMMARY -->
+  <p
+    class="mb-12 max-w-3xl text-base leading-8 font-normal text-neutral md:text-lg"
+  >
     {summary}
   </p>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href={`mailto:${email}`}>Get in Touch</a
-  >
+  <!-- BUTTONS -->
+  <div class="flex flex-wrap gap-4">
+    <!-- GET IN TOUCH -->
+    <a
+      class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-white transition hover:opacity-90"
+      href={`mailto:${email}`}
+    >
+      Get in Touch
+    </a>
+
+    <!-- VIEW PROJECTS -->
+    <a
+      class="inline-block rounded-full border border-primary px-8 py-5 text-sm leading-5 font-medium text-primary transition hover:bg-primary hover:text-white"
+      href="#projects"
+    >
+      View My Work
+    </a>
+
+    <!-- DOWNLOAD CV -->
+    <a
+      class="inline-block rounded-full border border-primary/30 bg-[#f8f5fc] px-8 py-5 text-sm leading-5 font-medium text-black transition hover:border-primary hover:bg-primary hover:text-white"
+      href="/Rejoice-Teca-CV.pdf"
+      download="Rejoice-Teca-CV.pdf"
+    >
+      Download CV
+    </a>
+  </div>
 </section>
+
+<script>
+  const nameText = "Rejoice Teca";
+  const specialtyText = "Computer Science Student | Software Developer";
+
+  const nameElement = document.querySelector("#typed-name");
+  const specialtyElement = document.querySelector("#typed-specialty");
+
+  const nameCursor = document.querySelector("#name-cursor");
+
+  const specialtyCursor = document.querySelector("#specialty-cursor");
+
+  if (nameElement && specialtyElement && nameCursor && specialtyCursor) {
+    let nameIndex = 0;
+    let specialtyIndex = 0;
+
+    // Hide specialty cursor while name is typing.
+    specialtyCursor.classList.add("hidden");
+
+    // Type name.
+    const typeName = () => {
+      if (nameIndex < nameText.length) {
+        nameElement.textContent += nameText.charAt(nameIndex);
+
+        nameIndex++;
+
+        setTimeout(typeName, 120);
+      } else {
+        // Name finished.
+        nameCursor.classList.add("hidden");
+        specialtyCursor.classList.remove("hidden");
+
+        // Small pause before typing specialty.
+        setTimeout(typeSpecialty, 350);
+      }
+    };
+
+    // Type specialty.
+    const typeSpecialty = () => {
+      if (specialtyIndex < specialtyText.length) {
+        specialtyElement.textContent += specialtyText.charAt(specialtyIndex);
+
+        specialtyIndex++;
+
+        setTimeout(typeSpecialty, 70);
+      }
+    };
+
+    // Start animation.
+    setTimeout(typeName, 500);
+  }
+</script>
+
+<style>
+  #name-cursor,
+  #specialty-cursor {
+    display: inline-block;
+    margin-left: 4px;
+    font-weight: 400;
+  }
+
+  #name-cursor {
+    color: #302840;
+  }
+
+  #specialty-cursor {
+    color: #9b7ede;
+  }
+
+  #name-cursor,
+  #specialty-cursor {
+    animation: blink 0.8s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    45% {
+      opacity: 1;
+    }
+
+    46%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #name-cursor,
+    #specialty-cursor {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>

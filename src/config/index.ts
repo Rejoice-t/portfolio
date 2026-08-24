@@ -1,98 +1,220 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Rejoice Teca — Software Developer",
+  author: "Rejoice Teca",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Final-year Computer Science student specialising in Software Development, with experience in software development, AI, REST APIs, databases, and full-stack applications.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/profile.jpg",
+
   navLinks: [
-    { text: "Experience", href: "#experience" },
-    { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
+    { text: "Skills", href: "#skills" },
+    { text: "Education", href: "#experience" },
+    { text: "Projects", href: "#projects" },
   ],
+
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    {
+      text: "LinkedIn",
+      href: "https://www.linkedin.com/in/rejoice-teca-b92880313/",
+    },
+    {
+      text: "GitHub",
+      href: "https://github.com/Rejoice-t",
+    },
   ],
+
   socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  canonicalURL: "https://rejoice-teca.vercel.app",
 };
 
 export const SITE_CONTENT: SiteContent = {
+  /* =========================
+     HERO
+  ========================= */
+
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Rejoice Teca",
+    specialty: "Computer Science Student | Software Developer",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "Final-year Computer Science student specialising in Software Development at NUST, with hands-on experience building full-stack applications, REST APIs, AI-powered solutions, and database systems.",
+    email: "rejoice.teca@gmail.com",
   },
+
+  /* =========================
+     TECH STACK
+  ========================= */
+
+  skills: [
+    {
+      category: "Programming",
+      skills: [
+        { name: "Python", icon: "python" },
+        { name: "Java", icon: "java" },
+        { name: "JavaScript", icon: "javascript" },
+        { name: "SQL", icon: "database" },
+        { name: "HTML", icon: "html5" },
+        { name: "CSS", icon: "css3" },
+      ],
+    },
+
+    {
+      category: "Backend & APIs",
+      skills: [
+        { name: "FastAPI", icon: "fastapi" },
+        { name: "REST APIs", icon: "api" },
+        { name: "JSON", icon: "json" },
+      ],
+    },
+
+    {
+      category: "AI & Data",
+      skills: [
+        { name: "Generative AI", icon: "ai" },
+        { name: "Groq API", icon: "groq" },
+        { name: "Google Gemini", icon: "gemini" },
+      ],
+    },
+
+    {
+      category: "Databases & Tools",
+      skills: [
+        { name: "MySQL", icon: "mysql" },
+        { name: "SQL Server", icon: "database" },
+        { name: "Git", icon: "git" },
+        { name: "GitHub", icon: "github" },
+        { name: "Swagger", icon: "swagger" },
+        { name: "Vercel", icon: "vercel" },
+      ],
+    },
+  ],
+
+  /* =========================
+     EDUCATION & EXPERIENCE
+  ========================= */
+
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Namibia University of Science and Technology",
+      position: "Bachelor of Computer Science — Software Development",
+      startDate: "Feb 2024",
+      endDate: "Present",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Developing practical skills in software development, databases, APIs, web development, software engineering, and distributed systems through academic projects.",
+        "Applying programming, problem-solving, testing, and database concepts to software development projects using Java, Python, JavaScript, SQL, and Git.",
       ],
     },
+
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "Riga Technical University",
+      position: "Academic Exchange Programme",
+      startDate: "Jan 2026",
+      endDate: "Jun 2026",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Completed Computer Science coursework including Artificial Intelligence, Natural Language Processing, Testing and Software Quality, and Applied System Software.",
+        "Studied in an international academic environment, strengthening communication, teamwork, adaptability, and problem-solving skills.",
       ],
     },
+
     {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
+      company: "Deep Learning IndabaX Namibia",
+      position: "Hackathon Participant — AI Livestock & Grazing",
+      startDate: "Jul 2026",
+      endDate: "Jul 2026",
+      summary: [
+        "Collaborated with a multidisciplinary team to develop an AI-powered livestock advisory prototype using Python, FastAPI, Google Gemini, REST APIs, and external weather and pasture data.",
+        "Used Git and GitHub for collaborative development while building and presenting a functional AI prototype during the hackathon.",
+      ],
     },
   ],
+
+  /* =========================
+     PROJECTS
+  ========================= */
+
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
+      name: "SaveFridge AI",
+      summary:
+        "A full-stack AI-powered web application that generates recipe recommendations from ingredients provided by users.",
+      technologies: [
+        "Python",
+        "FastAPI",
+        "JavaScript",
+        "Generative AI",
+        "Groq API",
+        "REST APIs",
+      ],
+      linkPreview: "https://save-fridge-ai.vercel.app/",
+      linkSource: "https://github.com/Rejoice-t/SaveFridge-AI",
+      image: "/SaveFridge-AI.png",
     },
+
     {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
+      name: "VISION — AI Livestock & Grazing",
+      summary:
+        "An AI-powered livestock advisory prototype developed during the Deep Learning IndabaX Namibia hackathon to provide intelligent grazing recommendations using environmental information.",
+      technologies: [
+        "Python",
+        "FastAPI",
+        "Google Gemini",
+        "REST APIs",
+        "Git",
+        "GitHub",
+      ],
+      linkPreview: "https://vision-kf45.vercel.app/",
+      linkSource: "https://github.com/Twawana/Deep-Learning-IndabaX",
+      image: "/vision.png",
     },
+
     {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
+      name: "Cinna Roll Society Website",
+      summary:
+        "A responsive website developed to showcase a food business and provide customers with a simple and engaging browsing experience.",
+      technologies: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Responsive Design",
+      ],
+      linkPreview: "https://cinnaroll-society.netlify.app/",
+      linkSource: "https://github.com/Rejoice-t/cinnaroll",
+      image: "/logo.png",
+    },
+
+    {
+      name: "Banking Simulation Application",
+      summary:
+        "A Java and MySQL banking simulation application implementing account management, deposits, withdrawals, and fund transfers.",
+      technologies: [
+        "Java",
+        "MySQL",
+        "Object-Oriented Programming",
+        "Database Design",
+      ],
+      linkSource: "https://github.com/euricodande/Banky",
+      image: "/banky.png",
     },
   ],
+
+  /* =========================
+     ABOUT
+  ========================= */
+
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+      I’m Rejoice Teca, a final-year Computer Science student specialising in Software Development at the Namibia University of Science and Technology.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+      I enjoy building practical software solutions and exploring how technology can be used to solve real-world problems. My experience includes full-stack web development, REST APIs, databases, artificial intelligence, and software testing.
+
+      Some of my recent work includes SaveFridge AI, an AI-powered recipe application that I developed and deployed independently, and VISION, an AI livestock advisory prototype developed during the Deep Learning IndabaX Namibia hackathon.
+
+      I also had the opportunity to study at Riga Technical University in Latvia through an academic exchange programme. This experience exposed me to different approaches to technology and strengthened my ability to work and communicate in diverse environments.
+
+      I am currently looking for opportunities where I can apply my technical skills, learn from experienced developers, and continue growing as a software professional.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/rej.png",
   },
 };
-
-// #5755ff
